@@ -36,3 +36,57 @@
     transform: rotate(360deg);
   }
 }
+
+#container {
+  height:650px; 
+  position:relative; 
+  overflow:hidden;
+}
+
+.photobanner img {    
+  --margin: 0 1em 
+}
+
+.walk {
+  position:absolute; 
+  top:0px; 
+  left:0px; 
+  overflow:hidden; 
+  white-space: nowrap;
+  animation: bannermove var(--xValue)  linear infinite;
+}
+
+.run {
+  position:absolute; 
+  top:0px; 
+  left:0px; 
+  overflow:hidden; 
+  white-space: nowrap;
+  animation: bannermove 5s linear infinite;
+}
+
+.idle {
+  position:absolute; 
+  top:0px; 
+  left:0px; 
+  overflow:hidden; 
+  white-space: nowrap;
+  animation: bannermove 0s linear infinite;
+  z-index: 1;
+}
+
+.character {
+  z-index: 3;
+  position: absolute;
+  top: 75px;
+  left: 25px;
+}
+
+@keyframes bannermove {
+  0% {
+      transform: translate(0, 0);
+  }
+  100% {
+      transform: translate(-50%, 0);
+  }
+}
